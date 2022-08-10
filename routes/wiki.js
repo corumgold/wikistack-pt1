@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const viewsIndex = require("../views/index");
+const { Page } = require("../models");
 
 router.get("/", (req, res, next) => {
   try {
@@ -18,9 +19,14 @@ router.get("/add", (req, res, next) => {
   }
 });
 
-router.post("/", (req, res, next) => {
+router.post("/", async (req, res, next) => {
   try {
-    res.send("Got to post!");
+    const page = await Page.create({
+      title: req.body.title,
+      content: req.body.content,
+    });
+
+    res.redirect("/");
   } catch (err) {
     next(err);
   }

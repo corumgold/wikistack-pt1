@@ -17,7 +17,11 @@ db.authenticate().then(() => {
 });
 
 app.get("/", (req, res) => {
-  res.redirect("/wiki")
+  res.redirect("/wiki");
+});
+
+Page.addHook("beforeValidate", (page) => {
+  page.slug = page.title.replace(/\s+/g, "_").replace(/\W/g, "");
 });
 
 const init = async () => {

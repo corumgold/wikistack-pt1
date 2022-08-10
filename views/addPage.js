@@ -21,15 +21,16 @@ module.exports = () =>
         <div class="col-sm-10">
           <input id="title" name="title" type="text" class="form-control" />
         </div>
-      </div>
-      <label for="content" class="col-sm-2 control-label">Content</label>
-      <div class="col-sm-10">
-        <input id="content" name="title" type="text" class="form-control" />
-      </div>
 
-      <label for="status" class="col-sm-2 control-label">Status</label>
-      <div class="col-sm-10">
-        <input id="status" name="status" type="text" class="form-control" />
+        <label for="content" class="col-sm-2 control-label">Content</label>
+        <div class="col-sm-10">
+          <input id="content" name="content" type="text" class="form-control" />
+        </div>
+
+        <label for="status" class="col-sm-2 control-label">Status</label>
+        <div class="col-sm-10">
+          <input id="status" name="status" type="text" class="form-control" />
+        </div>
       </div>
 
       <div class="col-sm-offset-2 col-sm-10">
